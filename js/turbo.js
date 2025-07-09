@@ -4097,18 +4097,6 @@ Copyright © 2025 37signals LLC
     // Scrolling
 
     performScroll() {
-      if (!this.scrolled && !this.view.forceReloaded && !this.view.shouldPreserveScrollPosition(this)) {
-        if (this.action == "restore") {
-          this.scrollToRestoredPosition() || this.scrollToAnchor() || this.view.scrollToTop();
-        } else {
-          this.scrollToAnchor() || this.view.scrollToTop();
-        }
-        if (this.isSamePage) {
-          this.delegate.visitScrolledToSamePageLocation(this.view.lastRenderedLocation, this.location);
-        }
-
-        this.scrolled = true;
-      }
     }
 
     scrollToRestoredPosition() {
